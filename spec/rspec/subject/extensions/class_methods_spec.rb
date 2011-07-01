@@ -1,6 +1,12 @@
 require 'spec_helper'
 
-module RSpec::Subject::Extensions
+module RSpec::Subject::Extensions::ClassMethods
+  describe "initialization" do
+    it "should extend RSpec::Core::ExampleGroup with RSpec::Subject::Extensions::ClassMethods" do
+      RSpec::Core::ExampleGroup.respond_to?('each').should be_true
+    end
+  end
+
   describe "#each" do
     context "with an Object having #items returning an Array of Integers" do
       subject do

@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email = "public@zencocoon.com"
   s.homepage = "http://github.com/ZenCocoon/rspec-subject-extensions"
   s.summary = "rspec-subject-extensions-#{RSpec::Subject::Extensions::Version::STRING}"
-  s.description = "rspec subject extensions (each)"
+  s.description = "rspec-subject-extensions let's you use short-hands to generate nested examples groups"
 
   s.files = `git ls-files -- lib/*`.split("\n")
   s.test_files = `git ls-files -- {spec,features}/*`.split("\n")
@@ -18,6 +18,12 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_path = "lib"
 
+  s.add_runtime_dependency 'rspec', '~> 2.6.0'
   s.add_runtime_dependency 'i18n', '>= 0.5.0'
   s.add_runtime_dependency 'activesupport', '>= 3.0'
+
+  s.add_development_dependency "rake", "~> 0.9"
+  s.add_development_dependency "cucumber", "1.0.0"
+  s.add_development_dependency "aruba", "0.4.2"
+  s.add_development_dependency "nokogiri", "1.4.4"
 end

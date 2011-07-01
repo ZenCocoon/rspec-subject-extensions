@@ -1,4 +1,3 @@
-require 'rspec/core'
 require 'rspec/subject/extensions'
 
 RSpec::configure do |config|

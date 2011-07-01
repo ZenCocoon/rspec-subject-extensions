@@ -1,24 +1,6 @@
 source "http://rubygems.org"
 
-### rspec libs
-%w[rspec rspec-core rspec-expectations rspec-mocks].each do |lib|
-  library_path = File.expand_path("../../#{lib}", __FILE__)
-  if File.exist?(library_path)
-    gem lib, :path => library_path
-  else
-    gem lib, :git => "git://github.com/rspec/#{lib}.git"
-  end
-end
-
-### runtime dependencies
-gem "i18n", ">= 0.5.0"
-gem "activesupport", ">= 3.0"
-
-### dev dependencies
-gem "rake", "~> 0.9"
-gem "cucumber", "1.0.0"
-gem "aruba", "0.4.2"
-gem "nokogiri", "1.4.4"
+gemspec
 
 platforms :jruby do
   gem "jruby-openssl"
@@ -29,6 +11,7 @@ group :development do
   gem "relish", "0.4.0"
   gem 'yard', "~> 0.7.2"
   gem "guard-rspec", "0.1.9"
+  gem 'guard-cucumber', "~> 0.5.1"
   gem "growl", "1.0.3"
   gem "appraisal", :git => "git://github.com/thoughtbot/appraisal.git"
 

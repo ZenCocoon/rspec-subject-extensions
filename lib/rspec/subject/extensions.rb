@@ -1,4 +1,5 @@
-require 'rspec/subject/extensions/each'
+require 'rspec/core'
+require 'rspec/subject/extensions/class_methods'
 require 'rspec/subject/extensions/version'
 
 module RSpec
@@ -8,3 +9,5 @@ module RSpec
     end
   end
 end
+
+RSpec::Core::ExampleGroup.extend(RSpec::Subject::Extensions::ClassMethods)
