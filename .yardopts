@@ -1,0 +1,8 @@
+--no-document
+--no-private
+--exclude features
+--title 'Rspec Subject Extensions Documentation'
+-
+README.md
+Changelog.md
+License.txt

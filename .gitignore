@@ -1,0 +1,15 @@
+*.rbc
+*.sw?
+.DS_Store
+.bundle
+.rvmrc
+.yardoc
+Gemfile.lock
+bin
+coverage*
+doc
+pkg
+rdoc
+rerun.txt
+tags
+tmp
