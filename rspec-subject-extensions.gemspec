@@ -26,4 +26,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency "cucumber", "1.0.0"
   s.add_development_dependency "aruba", "0.4.2"
   s.add_development_dependency "nokogiri", "1.4.4"
+  s.add_development_dependency "relish", "0.4.0"
+  s.add_development_dependency 'yard', "~> 0.7.2"
+  s.add_development_dependency "guard-rspec", "0.1.9"
+  s.add_development_dependency 'guard-cucumber', "~> 0.5.1"
+  s.add_development_dependency "growl", "1.0.3"
+  s.add_development_dependency "appraisal", '~> 0.3.6'
 end
