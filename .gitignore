@@ -1,5 +1,6 @@
 *.rbc
 *.sw?
+*.gem
 .DS_Store
 .bundle
 .rvmrc
