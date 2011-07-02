@@ -2,19 +2,28 @@ require 'bundler'
 Bundler.setup
 Bundler::GemHelper.install_tasks
 
-# require 'appraisal'
-
 require 'rake'
 require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
+require 'appraisal'
+
 require 'rspec/subject/extensions/version'
 
-require 'cucumber/rake/task'
-Cucumber::Rake::Task.new(:cucumber)
+desc "Default: Run all specs and features for each appraisal"
+task :default => [:spec, :cucumber] do
+  if File.exist?('gemfiles')
+    system('bundle exec rake -s appraisal spec cucumber;')
+  else
+    puts "\033[36mYou need to run `rake appraisal:install` for testing with each appraisale\033[0m"
+  end
+end
 
-desc "Run all examples"
+desc "Run all specs"
 RSpec::Core::RakeTask.new(:spec) do |t|
   t.rspec_opts = %w[--color]
 end
+
+Cucumber::Rake::Task.new(:cucumber)
 
 if RUBY_VERSION.to_f == 1.8
   namespace :rcov do
@@ -52,6 +61,7 @@ task :clobber do
   rm_rf 'pkg'
   rm_rf 'tmp'
   rm_rf 'coverage'
+  rm 'coverage.data'
 end
 
 namespace :clobber do
@@ -60,5 +70,3 @@ namespace :clobber do
     Dir['**/*.rbc'].each {|f| File.delete(f)}
   end
 end
-
-task :default => [:spec, :cucumber]
