@@ -1,21 +1,21 @@
 # -*- encoding: utf-8 -*-
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require "rspec/subject/extensions/version"
+require "rspec-subject-extensions/version"
 
 Gem::Specification.new do |s|
   s.name = "rspec-subject-extensions"
-  s.version = RSpec::Subject::Extensions::Version::STRING
+  s.version = RSpecSubjectExtensions::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.authors = ["Sébastien Grosjean"]
+  s.authors = "Sébastien Grosjean"
   s.email = "public@zencocoon.com"
   s.homepage = "http://github.com/ZenCocoon/rspec-subject-extensions"
-  s.summary = "rspec-subject-extensions-#{RSpec::Subject::Extensions::Version::STRING}"
+  s.summary = "rspec-subject-extensions-#{RSpecSubjectExtensions::Version::STRING}"
   s.description = "rspec-subject-extensions let's you use short-hands to generate nested examples groups"
 
   s.files = `git ls-files -- lib/*`.split("\n")
   s.test_files = `git ls-files -- {spec,features}/*`.split("\n")
-  s.extra_rdoc_files = [ "README.md" ]
-  s.rdoc_options = ["--charset=UTF-8"]
+  s.extra_rdoc_files = "README.md"
+  s.rdoc_options = "--charset=UTF-8"
   s.require_path = "lib"
 
   s.add_runtime_dependency 'rspec', '~> 2.6.0'
@@ -31,5 +31,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "guard-rspec", "0.1.9"
   s.add_development_dependency 'guard-cucumber', "~> 0.5.1"
   s.add_development_dependency "growl", "1.0.3"
-  s.add_development_dependency "appraisal", '~> 0.3.6'
+  # s.add_development_dependency "appraisal", '~> 0.3.6'
 end

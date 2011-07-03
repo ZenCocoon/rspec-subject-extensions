@@ -22,6 +22,12 @@ tracker](https://github.com/ZenCocoon/rspec-subject-extensions/issues).
 
     gem install rspec-subject-extensions
 
+## Requirements
+
+    rspec ~> 2.6.0
+    i18n >= 0.5.0
+    activesupport >= 3.0
+
 ## Usage
 
 ### Each
@@ -53,3 +59,7 @@ The `attribute` can be a `Symbol` or a `String`.
 * [http://github.com/rspec/rspec-core](http://github.com/rspec/rspec-core)
 * [http://github.com/rspec/rspec-expectations](http://github.com/rspec/rspec-expectations)
 * [http://github.com/rspec/rspec-mocks](http://github.com/rspec/rspec-mocks)
+
+## License
+
+MIT License. Copyright 2011 Sébastien Grosjean, sponsored by [BookingSync, Vacation Rental's Booking Calendar Software](http://www.bookingsync.com)

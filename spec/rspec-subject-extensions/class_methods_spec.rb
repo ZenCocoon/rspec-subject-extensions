@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-module RSpec::Subject::Extensions::ClassMethods
+module RSpecSubjectExtensions::ClassMethods
   describe "initialization" do
-    it "should extend RSpec::Core::ExampleGroup with RSpec::Subject::Extensions::ClassMethods" do
+    it "should extend RSpec::Core::ExampleGroup with RSpecSubjectExtensions::ClassMethods" do
       RSpec::Core::ExampleGroup.respond_to?('each').should be_true
     end
   end

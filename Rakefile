@@ -1,21 +1,12 @@
-require 'bundler'
-Bundler.setup
-Bundler::GemHelper.install_tasks
-
+require 'bundler/setup'
 require 'rake'
 require 'rspec/core/rake_task'
 require 'cucumber/rake/task'
 require 'appraisal'
 
-require 'rspec/subject/extensions/version'
-
-desc "Default: Run all specs and features for each appraisal"
-task :default => [:spec, :cucumber] do
-  if File.exist?('gemfiles')
-    system('bundle exec rake -s appraisal spec cucumber;')
-  else
-    puts "\033[36mYou need to run `rake appraisal:install` for testing with each appraisale\033[0m"
-  end
+desc "Default: Run all specs and cucumber features under all supported Rails versions."
+task :default => ["appraisal:install"] do
+  exec('rake appraisal spec cucumber')
 end
 
 desc "Run all specs"

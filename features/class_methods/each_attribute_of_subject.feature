@@ -12,7 +12,7 @@ Feature: each attribute of subject
   Scenario: specify value of each attribute
     Given a file named "example_spec.rb" with:
       """
-      require 'rspec/subject/extensions'
+      require 'rspec-subject-extensions'
 
       class Movie
         def ratings
