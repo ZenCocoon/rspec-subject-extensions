@@ -1,9 +1,7 @@
-# RSpec Subject Extensions
+# RSpec Subject Extensions [![build status](http://travis-ci.org/ZenCocoon/rspec-subject-extensions.png)](http://travis-ci.org/ZenCocoon/rspec-subject-extensions)
 
 rspec-subject-extensions adds `each` short-hand to generate a nested example group with
 a single example that specifies the expected value of each attribute of the subject.
-
-[![build status](http://travis-ci.org/ZenCocoon/rspec-subject-extensions.png)](http://travis-ci.org/ZenCocoon/rspec-subject-extensions)
 
 ## Documentation
 
