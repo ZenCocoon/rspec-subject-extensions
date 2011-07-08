@@ -2,8 +2,6 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'appraisal', :git => "git://github.com/thoughtbot/appraisal.git"
-
 ### Dev
 gem "rcov", "0.9.9", :platforms => :mri
 
