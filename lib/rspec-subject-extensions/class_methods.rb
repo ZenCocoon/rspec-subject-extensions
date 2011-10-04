@@ -22,7 +22,7 @@ module RSpecSubjectExtensions
     #
     #   # ... generates the same runtime structure as this:
     #   describe Object do
-    #     describe "each item"
+    #     describe "each item" do
     #       it "should be an Interger" do
     #         subject.items.each do |item|
     #           item.should be_an(Integer)
@@ -39,7 +39,7 @@ module RSpecSubjectExtensions
             subject.send(attribute).each do |item|
               self.class.class_eval do
                 define_method(:subject) do
-                  @_subject ||= item
+                  @_subject = item
                 end
               end
 

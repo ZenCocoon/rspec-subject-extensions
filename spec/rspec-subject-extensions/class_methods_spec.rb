@@ -8,16 +8,34 @@ module RSpecSubjectExtensions::ClassMethods
   end
 
   describe "#each" do
-    context "with an Object having #items returning an Array of Integers" do
-      subject do
-        Class.new do
-          def items
-            [1, 2]
-          end
-        end.new
-      end
+    it "should satisfy expectation" do
+      group = RSpec::Core::ExampleGroup.describe("object") do
+        subject {
+          Class.new do
+            def items
+              [1, 2]
+            end
+          end.new
+        }
 
-      each(:item) { should be_an(Integer) }
+        each(:item) { should be_an(Integer) }
+      end
+      group.run(NullObject.new).should be_true
+    end
+
+    it "fails when expectation should fail" do
+      group = RSpec::Core::ExampleGroup.describe("object") do
+        subject {
+          Class.new do
+            def items
+              [1, 'a']
+            end
+          end.new
+        }
+
+        each(:item) { should be_an(Integer) }
+      end
+      group.run(NullObject.new).should be_false
     end
 
     context "when it doesn't respond to the pluralized version of the attribute" do
