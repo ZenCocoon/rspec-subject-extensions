@@ -1,6 +1,13 @@
 ### Dev
 
-[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.2.1...master)
+[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.2.2...master)
+
+### 0.2.2 / 2011-10-14
+
+[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.2.1...v0.2.2)
+
+* BugFix
+  * Fix Gemspec
 
 ### 0.2.1 / 2011-10-04
 

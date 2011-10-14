@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = "rspec-subject-extensions"
   s.version = RSpecSubjectExtensions::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.authors = "Sébastien Grosjean"
+  s.authors = "Sebastien Grosjean"
   s.email = "public@zencocoon.com"
   s.homepage = "http://github.com/ZenCocoon/rspec-subject-extensions"
   s.summary = "rspec-subject-extensions-#{RSpecSubjectExtensions::Version::STRING}"

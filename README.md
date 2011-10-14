@@ -8,7 +8,7 @@ a single example that specifies the expected value of each attribute of the subj
 The [Cucumber features](http://relishapp.com/ZenCocoon/rspec-subject-extensions)
 are the most comprehensive and up-to-date docs for end-users.
 
-The [RDoc](http://rubydoc.info/gems/rspec-subject-extensions/0.2.1/frames) provides
+The [RDoc](http://rubydoc.info/gems/rspec-subject-extensions/0.2.2/frames) provides
 additional information for contributors and/or extenders.
 
 All of the documentation is open source and a work in progress. If you find it
