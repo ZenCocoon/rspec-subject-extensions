@@ -1,6 +1,13 @@
 ### Dev
 
-[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.2.3...master)
+[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.3.0...master)
+
+### 0.3.0 / 2011-10-24
+
+[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.2.3...v0.3.0)
+
+* Enhancements
+  * Allow to use each without attribute to test against each element of the subject.
 
 ### 0.2.3 / 2011-10-23
 
