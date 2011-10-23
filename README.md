@@ -2,6 +2,7 @@
 
 rspec-subject-extensions adds `each` short-hand to generate a nested example group with
 a single example that specifies the expected value of each attribute of the subject.
+If no attribute is given, each element of the subject will be used.
 
 ## Documentation
 
@@ -30,6 +31,8 @@ tracker](https://github.com/ZenCocoon/rspec-subject-extensions/issues).
 
 ### Each
 
+#### Using the singular name of the attributes
+
 Creates a nested example group named by `each` and the submitted `attribute`,
 and then generates an example for each attribute using the submitted block.
 
@@ -50,6 +53,28 @@ and then generates an example for each attribute using the submitted block.
     end
 
 The `attribute` can be a `Symbol` or a `String`.
+
+#### Using no attribute. Ideal to test scopes
+
+Creates a nested example group and then generates an example
+for each instance using the submitted block.
+
+    # This ...
+    describe Object do
+      subject { Object.visible }
+      each { should be_visible }
+    end
+
+    # ... generates the same runtime structure as this:
+    describe Object do
+      describe "each instance" do
+        it "should be visible" do
+          subject.each do |element|
+            element.should be_visible
+          end
+        end
+      end
+    end
 
 ## Also see
 
