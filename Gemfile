@@ -12,4 +12,4 @@ gem "ruby-prof", "~> 0.9.2", :platforms => [:mri_18, :mri_19], :group => :develo
 gem "rake", "~> 0.9", :group => :test
 gem 'rspec', '~> 2.6.0', :group => :test
 gem "cucumber", "1.0.0", :group => :test
-gem "appraisal", '~> 0.3.6', :group => :test
+gem "appraisal", '~> 0.3.8', :group => :test
