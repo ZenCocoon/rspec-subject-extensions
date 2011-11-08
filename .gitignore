@@ -3,13 +3,14 @@
 *.gem
 .DS_Store
 .bundle
+.rbx
 .rvmrc
 .yardoc
 Gemfile.lock
 bin
 coverage*
 doc
-gemfiles
+gemfiles/*.gemfile.lock
 pkg
 rdoc
 rerun.txt
