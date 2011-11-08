@@ -7,7 +7,7 @@ rvm:
   - ree
   - ruby-head
 gemfile:
-  - gemfiles/activesupport3.0-rpsec2.6.gemfile
-  - gemfiles/activesupport3.0-rpsec2.7.gemfile
-  - gemfiles/activesupport3.1-rpsec2.6.gemfile
-  - gemfiles/activesupport3.1-rpsec2.7.gemfile
+  - gemfiles/activesupport3.0-rspec2.6.gemfile
+  - gemfiles/activesupport3.0-rspec2.7.gemfile
+  - gemfiles/activesupport3.1-rspec2.6.gemfile
+  - gemfiles/activesupport3.1-rspec2.7.gemfile
