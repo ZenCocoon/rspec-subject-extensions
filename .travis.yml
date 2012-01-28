@@ -9,7 +9,10 @@ rvm:
 gemfile:
   - gemfiles/activesupport3.0-rspec2.6.gemfile
   - gemfiles/activesupport3.0-rspec2.7.gemfile
+  - gemfiles/activesupport3.0-rspec2.8.gemfile
   - gemfiles/activesupport3.1-rspec2.6.gemfile
   - gemfiles/activesupport3.1-rspec2.7.gemfile
+  - gemfiles/activesupport3.1-rspec2.8.gemfile
   - gemfiles/activesupport3.2-rspec2.6.gemfile
   - gemfiles/activesupport3.2-rspec2.7.gemfile
+  - gemfiles/activesupport3.2-rspec2.8.gemfile
