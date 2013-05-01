@@ -23,7 +23,7 @@ tracker](https://github.com/ZenCocoon/rspec-subject-extensions/issues).
 
 ## Requirements
 
-    rspec ~> 2.6.0
+    rspec ~> 2.6
     i18n >= 0.5.0
     activesupport >= 3.0
 
