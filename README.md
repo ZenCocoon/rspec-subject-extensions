@@ -37,16 +37,16 @@ Creates a nested example group named by `each` and the submitted `attribute`,
 and then generates an example for each attribute using the submitted block.
 
     # This ...
-    describe Object do
-      each(:item) { should be_an(Integer) }
+    describe User do
+      each(:address) { should be_an(Address) }
     end
 
     # ... generates the same runtime structure as this:
-    describe Object do
-      describe "each item"
-        it "should be an Integer" do
-          subject.items.each do |item|
-            item.should be_an(Integer)
+    describe User do
+      describe "each address"
+        it "should be an Address" do
+          subject.addresses.each do |address|
+            address.should be_an(Address)
           end
         end
       end
@@ -54,23 +54,23 @@ and then generates an example for each attribute using the submitted block.
 
 The `attribute` can be a `Symbol` or a `String`.
 
-#### Using no attribute. Ideal to test scopes
+#### Using no attribute (ideal for testing scopes)
 
 Creates a nested example group and then generates an example
 for each instance using the submitted block.
 
     # This ...
-    describe Object do
-      subject { Object.visible }
-      each { should be_visible }
+    describe User do
+      subject { User.active }
+      each { should be_active }
     end
 
     # ... generates the same runtime structure as this:
-    describe Object do
+    describe User do
       describe "each instance" do
-        it "should be visible" do
-          subject.each do |element|
-            element.should be_visible
+        it "should be active" do
+          subject.each do |user|
+            user.should be_active
           end
         end
       end
