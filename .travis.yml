@@ -3,7 +3,6 @@ script: "bundle exec rake spec"
 rvm:
   - 1.9.3
   - 2.0.0
-  - ree
   - ruby-head
 gemfile:
   - gemfiles/activesupport3.0-rspec2.6.gemfile
@@ -35,4 +34,3 @@ gemfile:
   - gemfiles/activesupport3.2-rspec2.14.gemfile
   - gemfiles/activesupport4.0-rspec2.13.gemfile
   - gemfiles/activesupport4.0-rspec2.14.gemfile
-  - gemfiles/activesupport4.1-rspec2.14.gemfile
