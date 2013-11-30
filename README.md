@@ -85,4 +85,4 @@ for each instance using the submitted block.
 
 ## License
 
-MIT License. Copyright 2011 Sébastien Grosjean, sponsored by [BookingSync, Vacation Rental's Booking Calendar Software](http://www.bookingsync.com)
+MIT License. Copyright 2011-2013 Sébastien Grosjean, sponsored by [BookingSync, Vacation Rental's Booking Calendar Software](http://www.bookingsync.com)

@@ -46,6 +46,12 @@ appraise "activesupport3.0-rspec2.13" do
   gem "rspec", "~> 2.13.0"
 end
 
+appraise "activesupport3.0-rspec2.14" do
+  gem "i18n", "~> 0.5.0"
+  gem "activesupport", "~> 3.0.0"
+  gem "rspec", "~> 2.14.0"
+end
+
 appraise "activesupport3.1-rspec2.6" do
   gem "i18n", "~> 0.6.0"
   gem "activesupport", "~> 3.1.0"
@@ -92,6 +98,12 @@ appraise "activesupport3.1-rspec2.13" do
   gem "i18n", "~> 0.6.0"
   gem "activesupport", "~> 3.1.0"
   gem "rspec", "~> 2.13.0"
+end
+
+appraise "activesupport3.1-rspec2.14" do
+  gem "i18n", "~> 0.6.0"
+  gem "activesupport", "~> 3.1.0"
+  gem "rspec", "~> 2.14.0"
 end
 
 appraise "activesupport3.2-rspec2.6" do
@@ -142,8 +154,21 @@ appraise "activesupport3.2-rspec2.13" do
   gem "rspec", "~> 2.13.0"
 end
 
-appraise "activesupport4.0-rc1-rspec2.13" do
+appraise "activesupport3.2-rspec2.14" do
   gem "i18n", "~> 0.6.0"
-  gem "activesupport", "4.0.0.rc1"
+  gem "activesupport", "~> 3.2.0"
   gem "rspec", "~> 2.13.0"
 end
+
+appraise "activesupport4.0-rspec2.13" do
+  gem "i18n", "~> 0.6.0"
+  gem "activesupport", "~> 4.0.0"
+  gem "rspec", "~> 2.13.0"
+end
+
+appraise "activesupport4.0-rspec2.14" do
+  gem "i18n", "~> 0.6.0"
+  gem "activesupport", "~> 4.0.0"
+  gem "rspec", "~> 2.14.0"
+end
+

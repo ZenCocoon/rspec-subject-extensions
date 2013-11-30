@@ -1,8 +1,6 @@
 bundler_args: --without development
 script: "bundle exec rake spec"
 rvm:
-  - 1.8.7
-  - 1.9.2
   - 1.9.3
   - 2.0.0
   - ree
@@ -16,6 +14,7 @@ gemfile:
   - gemfiles/activesupport3.0-rspec2.11.gemfile
   - gemfiles/activesupport3.0-rspec2.12.gemfile
   - gemfiles/activesupport3.0-rspec2.13.gemfile
+  - gemfiles/activesupport3.0-rspec2.14.gemfile
   - gemfiles/activesupport3.1-rspec2.6.gemfile
   - gemfiles/activesupport3.1-rspec2.7.gemfile
   - gemfiles/activesupport3.1-rspec2.8.gemfile
@@ -24,6 +23,7 @@ gemfile:
   - gemfiles/activesupport3.1-rspec2.11.gemfile
   - gemfiles/activesupport3.1-rspec2.12.gemfile
   - gemfiles/activesupport3.1-rspec2.13.gemfile
+  - gemfiles/activesupport3.1-rspec2.14.gemfile
   - gemfiles/activesupport3.2-rspec2.6.gemfile
   - gemfiles/activesupport3.2-rspec2.7.gemfile
   - gemfiles/activesupport3.2-rspec2.8.gemfile
@@ -32,4 +32,7 @@ gemfile:
   - gemfiles/activesupport3.2-rspec2.11.gemfile
   - gemfiles/activesupport3.2-rspec2.12.gemfile
   - gemfiles/activesupport3.2-rspec2.13.gemfile
-  - gemfiles/activesupport4.0-rc1-rspec2.13.gemfile
+  - gemfiles/activesupport3.2-rspec2.14.gemfile
+  - gemfiles/activesupport4.0-rspec2.13.gemfile
+  - gemfiles/activesupport4.0-rspec2.14.gemfile
+  - gemfiles/activesupport4.1-rspec2.14.gemfile
