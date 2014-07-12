@@ -2,18 +2,20 @@
 
 [full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.3.2...master)
 
+* Upgrade to RSpec 3.0 and drop support for lower versions
+
 ### 0.3.2 / 2012-06-13
 
 [full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.3.1...v0.3.2)
 
-* Fix
+* BugFix
   * Fix Gem dependencies.
 
 ### 0.3.1 / 2012-04-16
 
 [full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.3.0...v0.3.1)
 
-* Fix
+* BugFix
   * Fix Gem dependencies.
 
 ### 0.3.0 / 2011-10-24

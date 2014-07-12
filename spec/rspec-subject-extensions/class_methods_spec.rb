@@ -1,15 +1,15 @@
-require 'spec_helper'
+require "spec_helper"
 
 module RSpecSubjectExtensions::ClassMethods
   describe "initialization" do
-    it "should extend RSpec::Core::ExampleGroup with RSpecSubjectExtensions::ClassMethods" do
-      RSpec::Core::ExampleGroup.respond_to?('each').should be_true
+    it "extends RSpec::Core::ExampleGroup with RSpecSubjectExtensions::ClassMethods" do
+      expect(RSpec::Core::ExampleGroup.respond_to? "each").to be_truthy
     end
   end
 
   describe "#each" do
     context "with attribute" do
-      it "should satisfy expectation" do
+      it "satisfies expectation" do
         group = RSpec::Core::ExampleGroup.describe("object") do
           subject {
             Class.new do
@@ -19,9 +19,9 @@ module RSpecSubjectExtensions::ClassMethods
             end.new
           }
 
-          each(:item) { should be_an(Integer) }
+          each(:item) { is_expected.to be_an Integer }
         end
-        group.run(NullObject.new).should be_true
+        expect(group.run NullObject.new).to be_truthy
       end
 
       it "fails when expectation should fail" do
@@ -29,24 +29,24 @@ module RSpecSubjectExtensions::ClassMethods
           subject {
             Class.new do
               def items
-                [1, 'a']
+                [1, "a"]
               end
             end.new
           }
 
-          each(:item) { should be_an(Integer) }
+          each(:item) { is_expected.to be_an Integer }
         end
-        group.run(NullObject.new).should be_false
+        expect(group.run NullObject.new).to be_falsey
       end
 
       context "when it doesn't respond to the pluralized version of the attribute" do
         subject { Object.new }
 
-        context "it raises an error" do
+        context "raises an error" do
           each(:item) do
-            expect do
-              should be_an(Integer)
-            end.to raise_error(NoMethodError)
+            expect {
+              is_expected.to be_an Integer
+            }.to raise_error NoMethodError
           end
         end
       end
@@ -60,31 +60,31 @@ module RSpecSubjectExtensions::ClassMethods
           end.new
         end
 
-        context "it raises an error" do
+        context "raises an error" do
           each(:item) do
-            expect do
-              should be_an(Integer)
-            end.to raise_error(NoMethodError)
+            expect {
+              is_expected.to be_an Integer
+            }.to raise_error NoMethodError
           end
         end
       end
     end
 
     context "without attribute" do
-      it "should satisfy expectation" do
+      it "satisfies expectation" do
         group = RSpec::Core::ExampleGroup.describe("object") do
           subject { [1, 2] }
-          each { should be_an(Integer) }
+          each { is_expected.to be_an Integer }
         end
-        group.run(NullObject.new).should be_true
+        expect(group.run NullObject.new).to be_truthy
       end
 
       it "fails when expectation should fail" do
         group = RSpec::Core::ExampleGroup.describe("object") do
-          subject { [1, 'a'] }
-          each { should be_an(Integer) }
+          subject { [1, "a"] }
+          each { is_expected.to be_an Integer }
         end
-        group.run(NullObject.new).should be_false
+        expect(group.run NullObject.new).to be_falsey
       end
 
       it "fails when the object doesn't respond to each" do
@@ -92,11 +92,11 @@ module RSpecSubjectExtensions::ClassMethods
           subject { 1 }
           each do
             expect {
-              should be_an(Integer)
-            }.to raise_error(NoMethodError)
+              is_expected.to be_an Integer
+            }.to raise_error NoMethodError
           end
         end
-        group.run(NullObject.new).should be_false
+        expect(group.run NullObject.new).to be_falsey
       end
     end
   end

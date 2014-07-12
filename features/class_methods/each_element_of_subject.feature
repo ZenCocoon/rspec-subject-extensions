@@ -6,12 +6,12 @@ Feature: each element of subject
 
   each() requires a block representing the example.
 
-      each { should be_visible }
+      each { is_expected.to be_visible }
 
   Scenario: specify value of each element
     Given a file named "example_spec.rb" with:
       """
-      require 'rspec-subject-extensions'
+      require "rspec-subject-extensions"
 
       class Post
         def visible?
@@ -21,7 +21,7 @@ Feature: each element of subject
 
       describe Post do
         subject { [Post.new, Post.new] }
-        each { should be_visible }
+        each { is_expected.to be_visible }
       end
       """
     When I run `rspec example_spec.rb --format documentation`

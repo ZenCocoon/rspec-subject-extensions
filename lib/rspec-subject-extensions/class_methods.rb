@@ -1,4 +1,4 @@
-require 'active_support/inflector'
+require "active_support/inflector"
 
 module RSpecSubjectExtensions
   module ClassMethods
@@ -13,20 +13,21 @@ module RSpecSubjectExtensions
     #   Example to run against each attribute (or instance if no attribute given).
     #
     # @raise [NoMethodError]
-    #   The subject doesn't respond to the pluralized version of the attribute or it doesn't respond to each.
+    #   The subject doesn't respond to the pluralized version of the attribute
+    #   or it doesn't respond to each.
     #
     # @example Using the singular name of the attributes
     #   # This ...
     #   describe Object do
-    #     each(:item) { should be_an(Integer) }
+    #     each(:item) { is_expected.to be_an Integer }
     #   end
     #
     #   # ... generates the same runtime structure as this:
     #   describe Object do
     #     describe "each item" do
-    #       it "should be an Interger" do
+    #       it "is an Interger" do
     #         subject.items.each do |item|
-    #           item.should be_an(Integer)
+    #           expect(item).to be_an Integer
     #         end
     #       end
     #     end
@@ -36,15 +37,15 @@ module RSpecSubjectExtensions
     #   # This ...
     #   describe Object do
     #     subject { Object.visible }
-    #     each { should be_visible }
+    #     each { is_expected.to be_visible }
     #   end
     #
     #   # ... generates the same runtime structure as this:
     #   describe Object do
     #     describe "each instance" do
-    #       it "should be visible" do
+    #       it "is visible" do
     #         subject.each do |element|
-    #           element.should be_visible
+    #           expect(element).to be_visible
     #         end
     #       end
     #     end
@@ -59,10 +60,31 @@ module RSpecSubjectExtensions
 
     private
 
-      def each_without_attribute(&block)
-        describe("each instance") do
-          example do
-            subject.each do |item|
+    def each_without_attribute(&block)
+      describe("each instance") do
+        example do
+          subject.each do |item|
+            self.class.class_eval do
+              define_method(:subject) do
+                @_subject = item
+              end
+            end
+
+            instance_eval(&block)
+          end
+        end
+      end
+    end
+
+    def each_with_attribute(attribute, &block)
+      describe("each #{attribute}") do
+        attribute = attribute.to_s.pluralize
+
+        example do
+          if subject.respond_to?(attribute) &&
+             subject.send(attribute).respond_to?(:each)
+
+            subject.send(attribute).each do |item|
               self.class.class_eval do
                 define_method(:subject) do
                   @_subject = item
@@ -71,36 +93,17 @@ module RSpecSubjectExtensions
 
               instance_eval(&block)
             end
-          end
-        end
-      end
-
-      def each_with_attribute(attribute, &block)
-        describe("each #{attribute}") do
-          attribute = attribute.to_s.pluralize
-
-          example do
-            if subject.respond_to?(attribute) && subject.send(attribute).respond_to?(:each)
-              subject.send(attribute).each do |item|
-                self.class.class_eval do
-                  define_method(:subject) do
-                    @_subject = item
-                  end
-                end
-
-                instance_eval(&block)
+          else
+            self.class.class_eval do
+              define_method(:subject) do
+                @_subject ||= super().send(attribute).each
               end
-            else
-              self.class.class_eval do
-                define_method(:subject) do
-                  @_subject ||= super().send(attribute).each
-                end
-              end
-
-              instance_eval(&block)
             end
+
+            instance_eval(&block)
           end
         end
       end
+    end
   end
 end

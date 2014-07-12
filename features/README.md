@@ -1,5 +1,6 @@
-rspec-subject-extensions adds `each` short-hand to generate a nested example group with
-a single example that specifies the expected value of each attribute of the subject.
+rspec-subject-extensions adds `each` short-hand to generate a nested example
+group with a single example that specifies the expected value of each attribute
+of the subject.
 If no attribute is given, each element of the subject will be used.
 
 ## Each
@@ -11,15 +12,15 @@ and then generates an example for each attribute using the submitted block.
 
     # This ...
     describe Object do
-      each(:item) { should be_an(Integer) }
+      each(:item) { is_expected.to be_an Integer }
     end
 
     # ... generates the same runtime structure as this:
     describe Object do
       describe "each item"
-        it "should be an Integer" do
+        it "is an Integer" do
           subject.items.each do |item|
-            item.should be_an(Integer)
+            expect(item).to be_an Integer
           end
         end
       end
@@ -35,15 +36,15 @@ for each instance using the submitted block.
     # This ...
     describe Object do
       subject { Object.visible }
-      each { should be_visible }
+      each { is_expected.to be_visible }
     end
 
     # ... generates the same runtime structure as this:
     describe Object do
       describe "each instance" do
-        it "should be visible" do
+        it "is visible" do
           subject.each do |element|
-            element.should be_visible
+            expect(element).to be_visible
           end
         end
       end

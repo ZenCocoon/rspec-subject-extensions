@@ -6,13 +6,13 @@ Feature: each attribute of subject
 
   each() accepts a symbol or a string, and a block representing the example.
 
-      each(:item)     { should be_an(Item)    }
-      each("article") { should be_an(Article) }
+      each(:item)     { is_expected.to be_an Item }
+      each("article") { is_expected.to be_an Article }
 
   Scenario: specify value of each attribute
     Given a file named "example_spec.rb" with:
       """
-      require 'rspec-subject-extensions'
+      require "rspec-subject-extensions"
 
       class Movie
         def ratings
@@ -21,7 +21,7 @@ Feature: each attribute of subject
       end
 
       describe Movie do
-        each(:rating) { should be_an(Integer) }
+        each(:rating) { is_expected.to be_an Integer }
       end
       """
     When I run `rspec example_spec.rb --format documentation`

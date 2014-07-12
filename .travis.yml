@@ -1,36 +1,17 @@
-bundler_args: --without development
+language: ruby
+bundler_args: --without development --deployment
+cache: bundler
 script: "bundle exec rake spec"
 rvm:
   - 1.9.3
   - 2.0.0
+  - 2.1.0
+  - 2.1.1
+  - 2.1.2
   - ruby-head
 gemfile:
-  - gemfiles/activesupport3.0-rspec2.6.gemfile
-  - gemfiles/activesupport3.0-rspec2.7.gemfile
-  - gemfiles/activesupport3.0-rspec2.8.gemfile
-  - gemfiles/activesupport3.0-rspec2.9.gemfile
-  - gemfiles/activesupport3.0-rspec2.10.gemfile
-  - gemfiles/activesupport3.0-rspec2.11.gemfile
-  - gemfiles/activesupport3.0-rspec2.12.gemfile
-  - gemfiles/activesupport3.0-rspec2.13.gemfile
-  - gemfiles/activesupport3.0-rspec2.14.gemfile
-  - gemfiles/activesupport3.1-rspec2.6.gemfile
-  - gemfiles/activesupport3.1-rspec2.7.gemfile
-  - gemfiles/activesupport3.1-rspec2.8.gemfile
-  - gemfiles/activesupport3.1-rspec2.9.gemfile
-  - gemfiles/activesupport3.1-rspec2.10.gemfile
-  - gemfiles/activesupport3.1-rspec2.11.gemfile
-  - gemfiles/activesupport3.1-rspec2.12.gemfile
-  - gemfiles/activesupport3.1-rspec2.13.gemfile
-  - gemfiles/activesupport3.1-rspec2.14.gemfile
-  - gemfiles/activesupport3.2-rspec2.6.gemfile
-  - gemfiles/activesupport3.2-rspec2.7.gemfile
-  - gemfiles/activesupport3.2-rspec2.8.gemfile
-  - gemfiles/activesupport3.2-rspec2.9.gemfile
-  - gemfiles/activesupport3.2-rspec2.10.gemfile
-  - gemfiles/activesupport3.2-rspec2.11.gemfile
-  - gemfiles/activesupport3.2-rspec2.12.gemfile
-  - gemfiles/activesupport3.2-rspec2.13.gemfile
-  - gemfiles/activesupport3.2-rspec2.14.gemfile
-  - gemfiles/activesupport4.0-rspec2.13.gemfile
-  - gemfiles/activesupport4.0-rspec2.14.gemfile
+  - gemfiles/activesupport3.0-rspec3.0.gemfile
+  - gemfiles/activesupport3.1-rspec3.0.gemfile
+  - gemfiles/activesupport3.2-rspec3.0.gemfile
+  - gemfiles/activesupport4.0-rspec3.0.gemfile
+  - gemfiles/activesupport4.1-rspec3.0.gemfile

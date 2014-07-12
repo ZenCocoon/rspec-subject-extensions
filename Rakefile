@@ -1,12 +1,12 @@
-require 'bundler/setup'
-require 'rake'
-require 'rspec/core/rake_task'
-require 'cucumber/rake/task'
-require 'appraisal'
+require "bundler/setup"
+require "rake"
+require "rspec/core/rake_task"
+require "cucumber/rake/task"
+require "appraisal"
 
 desc "Default: Run all specs and cucumber features under all supported Rails versions."
-task :default => ["appraisal:install"] do
-  exec('rake appraisal spec cucumber')
+task :default do
+  exec("appraisal install ; appraisal rake spec cucumber")
 end
 
 desc "Run all specs"
@@ -19,7 +19,7 @@ Cucumber::Rake::Task.new(:cucumber)
 if RUBY_VERSION.to_f == 1.8
   namespace :rcov do
     task :cleanup do
-      rm_rf 'coverage.data'
+      rm_rf "coverage.data"
     end
 
     RSpec::Core::RakeTask.new :spec do |t|
@@ -50,15 +50,15 @@ task :relish, :version do |t, args|
 end
 
 task :clobber do
-  rm_rf 'pkg'
-  rm_rf 'tmp'
-  rm_rf 'coverage'
-  rm 'coverage.data'
+  rm_rf "pkg"
+  rm_rf "tmp"
+  rm_rf "coverage"
+  rm "coverage.data"
 end
 
 namespace :clobber do
   desc "remove generated rbc files"
   task :rbc do
-    Dir['**/*.rbc'].each {|f| File.delete(f)}
+    Dir["**/*.rbc"].each {|f| File.delete(f)}
   end
 end

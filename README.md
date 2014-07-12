@@ -23,7 +23,7 @@ tracker](https://github.com/ZenCocoon/rspec-subject-extensions/issues).
 
 ## Requirements
 
-    rspec ~> 2.6
+    rspec ~> 3.0
     i18n >= 0.5.0
     activesupport >= 3.0
 
@@ -36,21 +36,23 @@ tracker](https://github.com/ZenCocoon/rspec-subject-extensions/issues).
 Creates a nested example group named by `each` and the submitted `attribute`,
 and then generates an example for each attribute using the submitted block.
 
-    # This ...
-    describe User do
-      each(:address) { should be_an(Address) }
-    end
+```ruby
+# This ...
+describe User do
+  each(:address) { is_expected.to be_an Address }
+end
 
-    # ... generates the same runtime structure as this:
-    describe User do
-      describe "each address"
-        it "should be an Address" do
-          subject.addresses.each do |address|
-            address.should be_an(Address)
-          end
-        end
+# ... generates the same runtime structure as this:
+describe User do
+  describe "each address"
+    it "is an Address" do
+      subject.addresses.each do |address|
+        expect(address).to be_an Address
       end
     end
+  end
+end
+```
 
 The `attribute` can be a `Symbol` or a `String`.
 
@@ -59,22 +61,24 @@ The `attribute` can be a `Symbol` or a `String`.
 Creates a nested example group and then generates an example
 for each instance using the submitted block.
 
-    # This ...
-    describe User do
-      subject { User.active }
-      each { should be_active }
-    end
+```ruby
+# This ...
+describe User do
+  subject { User.active }
+  each { is_expected.to be_active }
+end
 
-    # ... generates the same runtime structure as this:
-    describe User do
-      describe "each instance" do
-        it "should be active" do
-          subject.each do |user|
-            user.should be_active
-          end
-        end
+# ... generates the same runtime structure as this:
+describe User do
+  describe "each instance" do
+    it "is active" do
+      subject.each do |user|
+        expect(user).to be_active
       end
     end
+  end
+end
+```
 
 ## Also see
 
@@ -85,4 +89,4 @@ for each instance using the submitted block.
 
 ## License
 
-MIT License. Copyright 2011-2013 Sébastien Grosjean, sponsored by [BookingSync, Vacation Rental's Booking Calendar Software](http://www.bookingsync.com)
+MIT License. Copyright 2011-2014 Sébastien Grosjean, sponsored by [BookingSync, Vacation Rental's Booking Calendar Software](http://www.bookingsync.com)
