@@ -1,7 +1,7 @@
 language: ruby
 bundler_args: --without development --deployment
 cache: bundler
-script: "bundle exec rake spec"
+script: "bundle install ; bundle exec rake spec"
 rvm:
   - 1.9.3
   - 2.0.0
@@ -10,8 +10,10 @@ rvm:
   - 2.1.2
   - ruby-head
 gemfile:
-  - gemfiles/activesupport3.0-rspec3.0.gemfile
-  - gemfiles/activesupport3.1-rspec3.0.gemfile
   - gemfiles/activesupport3.2-rspec3.0.gemfile
+  - gemfiles/activesupport3.2-rspec3.1.gemfile
   - gemfiles/activesupport4.0-rspec3.0.gemfile
+  - gemfiles/activesupport4.0-rspec3.1.gemfile
   - gemfiles/activesupport4.1-rspec3.0.gemfile
+  - gemfiles/activesupport4.1-rspec3.1.gemfile
+  - gemfiles/activesupport4.2.beta1-rspec3.1.gemfile
