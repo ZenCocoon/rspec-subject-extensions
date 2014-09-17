@@ -1,7 +1,12 @@
 ### Dev
 
-[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.3.2...master)
+[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v1.0.0...master)
 
+### 1.0.0 / 2014-09-17
+
+[full changelog](http://github.com/ZenCocoon/rspec-subject-extensions/compare/v0.3.2...1.0.0)
+
+* Add support for RSpec 3.1
 * Upgrade to RSpec 3.0 and drop support for lower versions
 
 ### 0.3.2 / 2012-06-13
